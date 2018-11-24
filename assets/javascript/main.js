@@ -52,7 +52,7 @@ $(document).ready(function () {
         } else if ($(this).attr("id") == ("char3")) {
             yourChar = Object.assign({}, player3);
             $(".points3").text(yourChar.hp);
-        } else if ($(this).attr("id") ==("char4")) {
+        } else if ($(this).attr("id") == ("char4")) {
             yourChar = Object.assign({}, player4);
             $(".points4").text(yourChar.hp);
         }
@@ -75,7 +75,7 @@ $(document).ready(function () {
             } else if ($(this).attr("id") == ("char3")) {
                 defendChar = Object.assign({}, player3);
                 $(".points3").text(defendChar.hp);
-            } else if ($(this).attr("id") ==("char4")) {
+            } else if ($(this).attr("id") == ("char4")) {
                 defendChar = Object.assign({}, player4);
                 $(".points4").text(defendChar.hp);
             }
@@ -90,11 +90,13 @@ $(document).ready(function () {
             yourChar.hp -= defendChar.ap;
             $(".defender p:last").html(defendChar.hp);
             $(".playerPick p:last").html(yourChar.hp);
-            $(".message").html("You attacked " + defendChar.char + " for " + yourCharAP + " damage." + "<br> "+ defendChar.char + " attacked you for " + defendChar.ap + " damage")
+            $(".message").html("You attacked " + defendChar.char + " for " + yourCharAP + " damage." + "<br> " + defendChar.char + " attacked you for " + defendChar.ap + " damage")
             console.log(defendChar.hp);
             console.log(yourChar.hp);
         }
         if (defendChar.hp < yourChar.ap) {
+            yourChar.hp += defendChar.ap;
+            $(".playerPick p:last").html(yourChar.hp);
             $(".message").html("You have defeated " + defendChar.char + ", you can choose to fight another enemy.")
             defendChar = "";
             enemy = false;
@@ -105,8 +107,11 @@ $(document).ready(function () {
             $(".attack").prop("disabled", true);
             $(".reset").show();
         }
+        if (!$("div").hasClass("enemy")) {
+            $(".message").text("You have defeated your enemies!  Play Again!")
+        }
     })
-    $(".reset").on("click", function(){
+    $(".reset").on("click", function () {
         location.reload();
     })
 })
