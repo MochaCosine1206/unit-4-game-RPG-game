@@ -1,23 +1,23 @@
 var player1 = {
-    char: "name1",
+    char: "Jerry",
     hp: 120,
     ap: 8,
     cap: 8
 }
 var player2 = {
-    char: "name2",
+    char: "Elaine",
     hp: 100,
     ap: 5,
     cap: 5
 }
 var player3 = {
-    char: "name3",
+    char: "George",
     hp: 150,
     ap: 20,
     cap: 20
 }
 var player4 = {
-    char: "name4",
+    char: "Cosmo",
     hp: 180,
     ap: 25,
     cap: 25
@@ -29,6 +29,7 @@ var yourCharAP = 0;
 var defendChar;
 var defendCharDamage;
 var enemy = false;
+var losers = [];
 
 
 
@@ -79,6 +80,7 @@ $(document).ready(function () {
                 defendChar = Object.assign({}, player4);
                 $(".points4").text(defendChar.hp);
             }
+            console.log(losers);
         })
     });
     $(".attack").on("click", function () {
@@ -100,18 +102,42 @@ $(document).ready(function () {
             $(".message").html("You have defeated " + defendChar.char + ", you can choose to fight another enemy.")
             defendChar = "";
             enemy = false;
+            losers.push(defendChar.char);
+            console.log(losers.length);
             $(".defender").remove();
         }
         if (yourChar.hp <= 0) {
-            $(".message").html("You have been defeated.  GAME OVER!!!!");
+            if (yourChar.char === "Jerry") {
+                $(".loss").css('background-image', 'url(assets/images/jerryloses.gif)');
+            } else if (yourChar.char === "Elaine") {
+                $(".loss").css('background-image', 'url(assets/images/elaineloses.gif)');
+            } else if (yourChar.char === "George") {
+                $(".loss").css('background-image', 'url(assets/images/georgeloses.gif)');
+            } else if (yourChar.char === "Cosmo") {
+                $(".loss").css('background-image', 'url(assets/images/kramerloses.gif)');
+            }
+            $(".loss").fadeIn(1000);
+            $(".lossmessage").html("You have been defeated.  GAME OVER!!!!");
             $(".attack").prop("disabled", true);
-            $(".reset").show();
+            $(".lossreset").show();
         }
-        if (!$("div").hasClass("enemy")) {
-            $(".message").text("You have defeated your enemies!  Play Again!")
+        if (losers.length === 3) {
+            if (yourChar.char === "Jerry") {
+                $(".win").css('background-image', 'url(assets/images/jerrywins.gif)');
+            } else if (yourChar.char === "Elaine") {
+                $(".win").css('background-image', 'url(assets/images/elainewins.gif)');
+            } else if (yourChar.char === "George") {
+                $(".win").css('background-image', 'url(assets/images/georgewins.gif)');
+            } else if (yourChar.char === "Cosmo") {
+                $(".win").css('background-image', 'url(assets/images/kramerwins.gif)');
+            }
+            $(".win").fadeIn(1000);
+            $(".winMessage").text("You have defeated your enemies!  Play Again!")
+            $(".winReset").show();
         }
     })
-    $(".reset").on("click", function () {
+
+    $(".reset, .winReset, .lossreset").on("click", function () {
         location.reload();
     })
 })

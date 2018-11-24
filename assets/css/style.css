@@ -1,5 +1,16 @@
+body {
+    /* background-image: url(../images/seinfeld_bkgrnd.jpg); */
+    background-image: linear-gradient(to bottom right, red, yellow);
+    /* height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+
 div {
     border: 2px solid green;
+    background-color: white;
     display: inline-block;
     text-align: center;
     padding: 10px;
@@ -22,7 +33,37 @@ div.defender {
     padding: 10px;
 }
 
+.win {
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.loss {
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
 
 span {
     display: block;
+}
+
+img {
+    max-width: 150px;
+    max-height: 100px;
 }
