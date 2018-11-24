@@ -1,6 +1,6 @@
 body {
     /* background-image: url(../images/seinfeld_bkgrnd.jpg); */
-    background-image: linear-gradient(to bottom right, red, yellow);
+    background-image: linear-gradient(to bottom right, pink, violet);
     /* height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,12 +8,29 @@ body {
 
 }
 
+.container {
+    align-content: center;
+    margin: 2% 20%;
+    width: 800px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: content-box;
+}
+
+div.playerPick {
+    position: sticky;
+    top: 0;
+    box-shadow:10px 10px 20px black;  
+}
+
 div {
     border: 2px solid green;
-    background-color: white;
+    background-color: lightgray;
     display: inline-block;
     text-align: center;
     padding: 10px;
+    border-radius: 5px;
 }
 
 div.enemy {
@@ -33,6 +50,17 @@ div.defender {
     padding: 10px;
 }
 
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h1 {
+    font-family: 'Ultra', serif;
+    font-size: 30px;
+}
+
 .win {
     display: none;
     position: fixed;
@@ -43,6 +71,9 @@ div.defender {
     z-index: 1;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 5px;
+    border: none;
+    box-shadow:20px 20px 50px black;  
 }
 
 .loss {
@@ -55,15 +86,40 @@ div.defender {
     z-index: 1;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 5px;
+    border: none;
+    box-shadow:20px 20px 50px black;  
 }
 
 
 
 span {
     display: block;
+    font-family: 'Montserrat', sans-serif;
 }
 
 img {
     max-width: 150px;
     max-height: 100px;
+}
+
+input[type=button] {
+    background-color: #008CBA;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+input[type=button]:hover {
+    background-color: #f44336;
+    color: white;
+    border: 2px solid #008CBA;
 }

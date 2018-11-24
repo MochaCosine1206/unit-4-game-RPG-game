@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RPG Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Ultra" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -14,44 +15,44 @@
 </head>
 
 <body>
-    
-    <h1><img class="logo" src="assets/images/Seinfeld.png">RPG Game!</h1>
-    <div class="playerPick" id="char1">
-        <p class="name1">Name 1</p>
-        <img src="assets/images/jerry.jpg">
-        <p class="points1">points1</p>
+    <div class="container">
+        <h1><img class="logo" src="assets/images/Seinfeld.png">RPG Game!</h1>
+        <div class="playerPick" id="char1">
+            <p class="name1">Name 1</p>
+            <img src="assets/images/jerry.jpg">
+            <p class="points1">points1</p>
+        </div>
+        <div class="playerPick" id="char2">
+            <p class="name2">Name 2</p>
+            <img src="assets/images/elaine.jpg">
+            <p class="points2">points2</p>
+        </div>
+        <div class="playerPick" id="char3">
+            <p class="name3">Name 3</p>
+            <img src="assets/images/goerge.jpg">
+            <p class="points3">points3</p>
+        </div>
+        <div class="playerPick" id="char4">
+            <p class="name4">Name 4</p>
+            <img src="assets/images/cosmo-kramer--i124978-300x150.jpg">
+            <p class="points4">points4</p>
+        </div>
+        <hr><span id="yourChar">Your Character - Click any character!</span><hr>
+        <span id="enemies">Enemies Available to Attack</span><hr>
+        <span id="fight">Fight Section</span><hr>
+        <input type="button" value="Attack" class="attack">
+        <hr><span id="defend">Defender</span><hr>
+        <input type="button" value="reset" class="reset" id="button">
+        <p class="message"></p>
+        <div class="win">
+            <p class="winMessage"></p>
+            <input type="button" value="RESET" class="winReset" id="button">
+        </div>
+        <div class="loss">
+            <p class="lossMessage"></p>
+            <input type="button" value="RESET" class="lossReset" id="button">
+        </div>
     </div>
-    <div class="playerPick" id="char2">
-        <p class="name2">Name 2</p>
-        <img src="assets/images/elaine.jpg">
-        <p class="points2">points2</p>
-    </div>
-    <div class="playerPick" id="char3">
-        <p class="name3">Name 3</p>
-        <img src="assets/images/goerge.jpg">
-        <p class="points3">points3</p>
-    </div>
-    <div class="playerPick" id="char4">
-        <p class="name4">Name 4</p>
-        <img src="assets/images/cosmo-kramer--i124978-300x150.jpg">
-        <p class="points4">points4</p>
-    </div>
-    <span id="yourChar">Your Character</span>
-    <span id="enemies">Enemies Available to Attack</span>
-    <span id="fight">Fight Section</span>
-    <input type="button" value="Attack" class="attack">
-    <span id="defend">Defender</span>
-    <input type="button" value="reset" class="reset">
-    <p class="message"></p>
-    <div class="win">
-        <p class="winMessage"></p>
-        <input type="button" value="reset" class="winReset">
-    </div>
-    <div class="loss">
-        <p class="lossMessage"></p>
-        <input type="button" value="reset" class="lossReset">
-    </div>
-
 </body>
 
 </html>
